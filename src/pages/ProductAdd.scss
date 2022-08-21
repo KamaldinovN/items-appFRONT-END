@@ -1,0 +1,11 @@
+.flex {
+  margin-top: 10px;
+  flex-grow: 1;
+}
+.form {
+  display: flex;
+  margin-left: 10px;
+  .select{
+    margin-left: 10px;
+  }
+}
