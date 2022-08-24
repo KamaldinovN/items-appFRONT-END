@@ -6,3 +6,24 @@
 .form-check-input{
  display: flex;
 }
+
+
+@media (max-width: 1400px) {
+  .grid{
+    flex: 0 0 auto;
+    width: 30%;
+  }
+}
+
+@media (max-width: 991px) {
+  .grid{
+    flex: 0 0 auto;
+    width: 45%;
+  }
+}
+@media (max-width: 767px) {
+  .grid{
+    flex: 0 0 auto;
+    width: 55%;
+  }
+}

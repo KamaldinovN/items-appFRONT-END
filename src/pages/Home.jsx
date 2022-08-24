@@ -7,19 +7,17 @@ import axios from "axios";
 
 // eslint-disable-next-line
 import style from "./Home.scss";
-import { AppContext } from "../App";
 
 function Home() {
   const [items, setItems] = React.useState();
   const [isLoading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    axios.get("http://localhost:5000/get").then((res) => {
+    axios.get("https://productistkamaldinov.herokuapp.com/get").then((res) => {
       setItems(res.data);
       setLoading(false);
     });
-    // eslint-disable-next-line
-  }, []);
+  }, [items]);
 
   return (
     <>

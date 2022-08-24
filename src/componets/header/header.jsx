@@ -22,10 +22,9 @@ function Header({
   width,
 }) {
   const [head, setHead] = React.useState(true);
-
   const addItem = () => {
     axios
-      .post("http://localhost:5000/add", {
+      .post("https://productistkamaldinov.herokuapp.com/add", {
         SKU: SKU,
         name: name,
         price: price,
@@ -43,11 +42,15 @@ function Header({
   };
 
   const deleteItem = () => {
-    axios.delete(`http://localhost:5000/delete/${id}`).then(() => {
-      console.log("Data Deleted");
-    });
-    window.location.reload();
+    axios
+      .delete(`https://productistkamaldinov.herokuapp.com/delete/${id}`)
+      .then(() => {
+        console.log("Data Deleted");
+      });
   };
+  // React.useEffect(() => {
+  //   deleteItem();
+  // }, [items]);
 
   const handleChangeFalse = () => {
     setHead(false);

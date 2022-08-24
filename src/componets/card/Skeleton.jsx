@@ -1,9 +1,10 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 import Col from "react-bootstrap/Col";
+import style from "./card.scss";
 
 const Skeleton = (props) => (
-  <Col xs={3}>
+  <Col xxl={3} className="grid">
     <ContentLoader
       speed={2}
       width={300}

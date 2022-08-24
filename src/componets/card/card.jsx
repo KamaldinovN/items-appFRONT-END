@@ -17,6 +17,7 @@ function Cards(props) {
   if (props.Type === "Furniture") {
     add = `Dimension: ${props.Height}x${props.Width}x${props.Length}`;
   }
+
   const [checked, setChecked] = React.useState(true);
   const changeCheckbox = (e) => {
     setChecked(!checked);
@@ -25,9 +26,10 @@ function Cards(props) {
       setId(id);
     }
   };
+
   return (
     <>
-      <Col xs={3}>
+      <Col xs={3} className="grid">
         <Card style={{ width: "18rem" }}>
           <Card.Body className={style.card}>
             <FormCheck
