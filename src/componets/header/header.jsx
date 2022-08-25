@@ -24,7 +24,7 @@ function Header({
   const [head, setHead] = React.useState(true);
   const addItem = () => {
     axios
-      .post("https://productistkamaldinov.herokuapp.com/add", {
+      .post("http://localhost:5000/add", {
         SKU: SKU,
         name: name,
         price: price,
@@ -36,21 +36,16 @@ function Header({
         width: width,
       })
       .then(() => {
-        console.log("success");
+        console.log("Data write");
       });
     handleChangeTrue();
   };
 
   const deleteItem = () => {
-    axios
-      .delete(`https://productistkamaldinov.herokuapp.com/delete/${id}`)
-      .then(() => {
-        console.log("Data Deleted");
-      });
+    axios.delete(`http://localhost:5000/delete/${id}`).then(() => {
+      console.log("Data deleted");
+    });
   };
-  // React.useEffect(() => {
-  //   deleteItem();
-  // }, [items]);
 
   const handleChangeFalse = () => {
     setHead(false);
@@ -79,13 +74,15 @@ function Header({
                       Add
                     </Button>
                   </Link>
-                  <Button
-                    onClick={deleteItem}
-                    id="delete-product-btn"
-                    variant="outline-danger"
-                  >
-                    Mass delete
-                  </Button>
+                  <Link to="/">
+                    <Button
+                      onClick={deleteItem}
+                      id="delete-product-btn"
+                      variant="outline-danger"
+                    >
+                      Mass delete
+                    </Button>
+                  </Link>
                 </Form>
               </Container>
             </>

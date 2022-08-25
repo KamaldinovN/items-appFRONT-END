@@ -9,15 +9,18 @@ import axios from "axios";
 import style from "./Home.scss";
 
 function Home() {
-  const [items, setItems] = React.useState();
+  const [items, setItems] = React.useState([]);
   const [isLoading, setLoading] = React.useState(true);
 
-  React.useEffect(() => {
-    axios.get("https://productistkamaldinov.herokuapp.com/get").then((res) => {
+  const loadData = () => {
+    axios.get("http://localhost:5000/get").then((res) => {
       setItems(res.data);
       setLoading(false);
     });
-  }, [items]);
+  };
+  React.useEffect(() => {
+    loadData();
+  }, []);
 
   return (
     <>

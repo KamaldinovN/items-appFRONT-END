@@ -1,6 +1,7 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 import Col from "react-bootstrap/Col";
+// eslint-disable-next-line
 import style from "./card.scss";
 
 const Skeleton = (props) => (
